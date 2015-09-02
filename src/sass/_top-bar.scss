@@ -1,6 +1,6 @@
 .top-bar {
   background-color: #276187;
-  font-size: 0.6em;
+  font-size: 18px;
   height: 50px;
   nav {
     float: right;
@@ -15,10 +15,16 @@
           margin-right: 15px;
         }
         a {
-          color: #fff;
-          line-height: 50px;
-          font-size: 18px;
           font-weight: 300;
+          display: inline-block;
+          .icon{
+            font-size: 22px;
+          }
+          span{
+            height: 100%;
+            display: inline-block;
+            line-height: 50px;
+          }
         }
       }
     }
