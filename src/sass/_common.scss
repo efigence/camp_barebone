@@ -1,6 +1,6 @@
 body {
   background-color: #000;
-  color: #FFF;
+  color: #f1f2f5;
   font-size: 26px;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -12,4 +12,12 @@ a {
 
 .bolder{
   font-weight: 700;
+}
+
+.table{
+  display: table;
+}
+
+.table-cell{
+  display: table-cell;
 }
