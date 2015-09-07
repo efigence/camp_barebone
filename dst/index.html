@@ -5,7 +5,9 @@
     <title>Efigence Camp</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
 
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="js/vendor/modernizr.js"></script>
+    <script src="js/map.js"></script>
   </head>
   <body class="">
     <section class="top-bar">
@@ -63,100 +65,55 @@
       <img src="/img/header-bg.png" alt="">
     </section>
 
-    <!-- <section class="intro"> -->
-    <!--   <div class="overlay"> -->
-    <!--     <span class="icon"></span> -->
-    <!--     <h2>lorem ipsum</h2> -->
-    <!--     <p> -->
-    <!--       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod -->
-    <!--     </p> -->
-    <!--   </div> -->
-    <!-- </section> -->
-    <!-- <section class="description" id="whatIsThis"> -->
-    <!--   <div class="left"> -->
-    <!--     <h2>Co to jest?</h2> -->
-    <!--     <div class="sentence"> -->
-    <!--       <h3> -->
-    <!--         Vivamus blah blah blah -->
-    <!--       </h3> -->
-    <!--       <small> -->
-    <!--         Cyceron -->
-    <!--       </small> -->
-    <!--     </div> -->
-    <!--     <p> -->
-    <!--       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod -->
-    <!--       tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At -->
-    <!--       vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, -->
-    <!--       no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-    <!--     </p> -->
-    <!--     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -->
-    <!--     </p> -->
-    <!--   </div> -->
-    <!--   <div class="right" id="news"> -->
-    <!--     <h2>Aktualności</h2> -->
-    <!--     <div class="column"> -->
-    <!--       <h3>News title 1</h3> -->
-    <!--       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-    <!--       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-    <!--       <a href="">Czytaj więcej</a> -->
-    <!--     </div> -->
-    <!--     <div class="column"> -->
-    <!--       <h3>News title 2</h3> -->
-    <!--       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-    <!--       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
-    <!--       <a href="">Czytaj więcej</a> -->
-    <!--     </div> -->
-    <!--   </div> -->
-
-    <!-- </section> -->
-
-    <!-- <section class="images"> -->
-    <!--   <div class="row"> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--   </div> -->
-    <!--   <div class="row"> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--     <div class="column"> <img src="http://lorempixel.com/400/200/nature/" alt=""> </div> -->
-    <!--   </div> -->
-    <!-- </section> -->
-
-    <!-- <section class="slider"> -->
-    <!--   <div class="left"></div> -->
-    <!--   <div class="slides"></div> -->
-    <!--   <div class="right"></div> -->
-    <!-- </section> -->
-
     <section class="contact" id="contact">
-      <div class="map">
-      </div>
-      <div class="contact_form">
-        <h2>Kontakt</h2>
-        <div class="left">
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="row">
+        <div class="map" id="googlemaps">
         </div>
-        <div class="right">
-          <form action="" method="post">
-            <input type="text" name="name" id="name" value="" />
-            <input type="email" name="email" id="email" value="" />
-            <textarea name="question" id=""></textarea>
-            <button type="submit">Wyślij wiadomość</button>
-          </form>
+        <div class="contact-form column small-6">
+          <h2>Kontakt</h2>
+          <div class="row">
+            <div class="column small-6">
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="column small-6">
+              <form action="" method="post">
+                <div class="row">
+                  <div class="column small-12">
+                    <input type="text" name="name" id="name" value="" placeholder="Imię i nazwisko" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="column small-12">
+                    <input type="email" name="email" id="email" value="" placeholder="E-mail" />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="column small-12">
+                    <textarea name="question" id="" placeholder="Wiadomość"></textarea>
+                  </div>
+                </div>
+
+                <button type="submit">Wyślij wiadomość</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <div class="left">
-        <a href="">Polityka prywatnośći</a>
-        <a href="">Polityka Cookies</a>
-        <a href="">Copyrights (c)2015 efigenc S.A.</a>
-      </div>
-      <div class="right">
-        <a href="" class="facebook"></a>
-        <a href="" class="github"></a>
+    <footer >
+      <div class="row">
+        <div class="column small-12 medium-6 left">
+          <a href="">Polityka prywatnośći</a>
+          <a href="">Polityka Cookies</a>
+          <a href="">Copyrights (c)2015 efigenc S.A.</a>
+        </div>
+        <div class="column small-12 medium-6 right">
+          <a href="" class="icon icon-facebook3"></a>
+          <a href="" class="icon icon-twitter3"></a>
+        </div>
       </div>
     </footer>
 
