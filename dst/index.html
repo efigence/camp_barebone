@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="hipsterTripApp">
   <head>
     <meta charset="utf-8">
     <title>Efigence Camp</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
 
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/app/contact.js"></script>
   </head>
   <body class="">
     <section class="top-bar">
@@ -65,7 +67,7 @@
       <img src="/img/header-bg.png" alt="">
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" ng-controller="ContactCtrl as contact">
       <div class="row">
         <div class="map" id="googlemaps">
         </div>
@@ -76,26 +78,41 @@
               <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div class="column small-6">
-              <form action="" method="post">
+              <form action="" method="post" ng-submit="contact.send($event)">
                 <div class="row">
                   <div class="column small-12">
-                    <input type="text" name="name" id="name" value="" placeholder="Imię i nazwisko" />
+                    <input type="text" name="name" id="name" value="" placeholder="Imię i nazwisko" ng-model="contact.form.name" />
+                    <div class="row" ng-if="contact.form.errors.name">
+                      <small class="error" ng-repeat="msg in contact.form.errors.name">
+                        {{msg}}
+                      </small>
+                    </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="column small-12">
-                    <input type="email" name="email" id="email" value="" placeholder="E-mail" />
+                    <input type="email" name="email" id="email" value="" placeholder="E-mail" ng-model="contact.form.email" />
+                    <div class="row" ng-if="contact.form.errors.email">
+                      <small class="error" ng-repeat="msg in contact.form.errors.email">
+                        {{msg}}
+                      </small>
+                    </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="column small-12">
-                    <textarea name="question" id="" placeholder="Wiadomość"></textarea>
+                    <textarea name="message" id="" placeholder="Wiadomość"  ng-model="contact.form.message"></textarea>
+                    <div class="row" ng-if="contact.form.errors.message">
+                      <small class="error" ng-repeat="msg in contact.form.errors.message">
+                        {{msg}}
+                      </small>
+                    </div>
                   </div>
                 </div>
 
-                <button type="submit">Wyślij wiadomość</button>
+                <button type="submit" ng-click="contact.send($event)">Wyślij wiadomość</button>
               </form>
             </div>
           </div>
