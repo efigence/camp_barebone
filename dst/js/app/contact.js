@@ -1,5 +1,4 @@
-angular.module('hipsterTripApp', [])
-  .controller('ContactCtrl', function($http) {
+app.controller('ContactCtrl', function($http) {
     var contact = this;
 
     contact.form = {}

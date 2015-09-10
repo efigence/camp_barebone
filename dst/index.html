@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/common/errors.js"></script>
     <script src="js/app/contact.js"></script>
   </head>
   <body class="">
@@ -82,33 +84,21 @@
                 <div class="row">
                   <div class="column small-12">
                     <input type="text" name="name" id="name" value="" placeholder="Imię i nazwisko" ng-model="contact.form.name" />
-                    <div class="row" ng-if="contact.form.errors.name">
-                      <small class="error" ng-repeat="msg in contact.form.errors.name">
-                        {{msg}}
-                      </small>
-                    </div>
+                    <errors for="contact.form.errors.name"></errors>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="column small-12">
                     <input type="email" name="email" id="email" value="" placeholder="E-mail" ng-model="contact.form.email" />
-                    <div class="row" ng-if="contact.form.errors.email">
-                      <small class="error" ng-repeat="msg in contact.form.errors.email">
-                        {{msg}}
-                      </small>
-                    </div>
+                    <errors for="contact.form.errors.email"></errors>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="column small-12">
                     <textarea name="message" id="" placeholder="Wiadomość"  ng-model="contact.form.message"></textarea>
-                    <div class="row" ng-if="contact.form.errors.message">
-                      <small class="error" ng-repeat="msg in contact.form.errors.message">
-                        {{msg}}
-                      </small>
-                    </div>
+                    <errors for="contact.form.errors.message"></errors>
                   </div>
                 </div>
 
