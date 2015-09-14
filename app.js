@@ -11,3 +11,16 @@ var server = app.listen(8080, function () {
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
+
+var io = require('socket.io')(server);
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('join', function (data) {
+    console.log(data);
+  });
+
+  socket.on('broadcast', function (data) {
+    console.log('broadcast', data);
+    socket.broadcast.emit('broadcast', data);
+  });
+});
